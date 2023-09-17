@@ -37,3 +37,5 @@ const terrence: Admin = {
 
 terrence.email = "jung@gmail.com";
 // terrence.dbId = 2 doesn't work
+
+export {};
