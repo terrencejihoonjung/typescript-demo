@@ -3,16 +3,28 @@ interface User {
   email: string;
   userId: number;
   googleId?: string;
-  // startTrail: () => string;
-  startTrail(): string;
 
+  startTrail(): string;
   getCoupon(couponName: string, value: number): number;
 }
 
-const terrence: User = {
+// "Reopening of the interface"
+interface User {
+  githubToken: string;
+}
+
+// Inheritance
+interface Admin extends User {
+  role: "admin" | "ta" | "learner";
+}
+
+const terrence: Admin = {
   dbId: 1,
   email: "terrence@gmail.com",
+  role: "admin",
   userId: 2,
+  githubToken: "github",
+
   // Must be a function that returns a string
   startTrail: () => {
     return "trial started";
